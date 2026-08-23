@@ -1,140 +1,194 @@
-# Z AI Telegram Bot 🤖✨
+<h1 align="center">Z AI Telegram Bot 🤖✨</h1>
 
-A sophisticated Telegram bot powered by Google's Gemini AI that responds as "Z" — a warm, clever, and slightly mischievous AI companion. The bot works in both private chats and group conversations, featuring multi-model support, sponsor channel verification, and intelligent context management.
+<p align="center">
+  <strong>A sophisticated Telegram bot powered by Google's Gemini AI</strong>
+</p>
 
-## ✨ Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-16%2B-brightgreen" alt="Node.js Version">
+  <img src="https://img.shields.io/badge/Platform-Telegram-blue" alt="Platform">
+  <img src="https://img.shields.io/badge/AI-Gemini-orange" alt="AI Model">
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+</p>
 
-- **🤖 Multi-Model Support**: Switch between Gemini 3.5 Flash Lite and Gemini 3.7 Flash
-- **💬 Group & Private Chat**: Responds in private chats or when mentioned/replied to in groups
-- **🔐 Sponsor Verification**: Requires users to join a sponsor channel before use
-- **🧠 Smart Context Management**: Maintains conversation history with automatic reset when context limits are reached
-- **🔄 Automatic Fallback**: Falls back to a lighter model during high-demand or rate-limited periods
-- **🌍 Multi-Language**: Responds in the user's language automatically
-- **⚡ Queue System**: Prevents race conditions in concurrent message handling
-- **🛡️ Robust Error Handling**: Gracefully handles Telegram API errors and rate limits
+<hr>
 
-## 🚀 Getting Started
+<h2>📋 Table of Contents</h2>
+<ul>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#usage">Usage</a></li>
+  <li><a href="#how-it-works">How It Works</a></li>
+  <li><a href="#architecture">Architecture</a></li>
+  <li><a href="#configuration">Configuration</a></li>
+  <li><a href="#troubleshooting">Troubleshooting</a></li>
+  <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
 
-### Prerequisites
+<hr>
 
-- Node.js 16 or higher
-- A Telegram Bot Token ([Get one from @BotFather](https://t.me/botfather))
-- Google Gemini API Key ([Get one from Google AI Studio](https://makersuite.google.com/app/apikey))
-- A sponsor Telegram channel with the bot added as admin
+<h2 id="features">✨ Features</h2>
 
-### Installation
+<table>
+  <tr>
+    <th>Feature</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>🤖 <strong>Multi-Model Support</strong></td>
+    <td>Switch between Gemini 3.5 Flash Lite and Gemini 3.7 Flash</td>
+  </tr>
+  <tr>
+    <td>💬 <strong>Group & Private Chat</strong></td>
+    <td>Responds in private chats or when mentioned/replied to in groups</td>
+  </tr>
+  <tr>
+    <td>🔐 <strong>Sponsor Verification</strong></td>
+    <td>Requires users to join a sponsor channel before use</td>
+  </tr>
+  <tr>
+    <td>🧠 <strong>Smart Context Management</strong></td>
+    <td>Maintains conversation history with automatic reset when context limits are reached</td>
+  </tr>
+  <tr>
+    <td>🔄 <strong>Automatic Fallback</strong></td>
+    <td>Falls back to a lighter model during high-demand or rate-limited periods</td>
+  </tr>
+  <tr>
+    <td>🌍 <strong>Multi-Language</strong></td>
+    <td>Responds in the user's language automatically</td>
+  </tr>
+  <tr>
+    <td>⚡ <strong>Queue System</strong></td>
+    <td>Prevents race conditions in concurrent message handling</td>
+  </tr>
+  <tr>
+    <td>🛡️ <strong>Robust Error Handling</strong></td>
+    <td>Gracefully handles Telegram API errors and rate limits</td>
+  </tr>
+</table>
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/z-ai-telegram-bot.git
-   cd z-ai-telegram-bot
-   ```
+<hr>
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+<h2 id="prerequisites">🔧 Prerequisites</h2>
 
-3. **Set up environment variables**
+<ul>
+  <li><strong>Node.js</strong> 16 or higher</li>
+  <li><strong>Telegram Bot Token</strong> - <a href="https://t.me/botfather">Get from @BotFather</a></li>
+  <li><strong>Google Gemini API Key</strong> - <a href="https://makersuite.google.com/app/apikey">Get from Google AI Studio</a></li>
+  <li><strong>Sponsor Telegram Channel</strong> with the bot added as admin</li>
+</ul>
 
-   Create a `.env` file in the root directory:
-   ```env
-   BOT_TOKEN=your_telegram_bot_token_here
-   GEMINI_API_KEY=your_gemini_api_key_here
-   SPONSOR_CHANNEL=@your_sponsor_channel_username
-   SPONSOR_CHANNEL_LINK=https://t.me/your_sponsor_channel_username
-   ```
+<hr>
 
-4. **Run the bot**
-   ```bash
-   npm start
-   ```
+<h2 id="installation">🚀 Installation</h2>
 
-## 📦 Dependencies
+<h3>1. Clone the Repository</h3>
+<pre><code>git clone https://github.com/yourusername/z-ai-telegram-bot.git
+cd z-ai-telegram-bot</code></pre>
 
-```json
-{
-  "dependencies": {
-    "grammy": "^1.x.x",
-    "@google/generative-ai": "^0.x.x"
-  }
-}
-```
+<h3>2. Install Dependencies</h3>
+<pre><code>npm install</code></pre>
 
-Install with:
-```bash
-npm install grammy @google/generative-ai
-```
+<h3>3. Configure Environment Variables</h3>
+<p>Create a <code>.env</code> file in the root directory:</p>
+<pre><code>BOT_TOKEN=your_telegram_bot_token_here
+GEMINI_API_KEY=your_gemini_api_key_here
+SPONSOR_CHANNEL=@your_sponsor_channel_username
+SPONSOR_CHANNEL_LINK=https://t.me/your_sponsor_channel_username</code></pre>
 
-## 🎯 Usage
+<h3>4. Run the Bot</h3>
+<pre><code>npm start</code></pre>
 
-### Private Chat
-1. Start the bot with `/start`
-2. Join the sponsor channel if prompted
-3. Choose your preferred AI model
-4. Start chatting naturally!
+<hr>
 
-### Group Chat
-- **Mention the bot**: `@YourBotName What do you think about AI?`
-- **Reply to the bot**: Reply directly to any bot message
+<h2 id="usage">🎯 Usage</h2>
 
-### Available Commands
+<h3>Private Chat</h3>
+<ol>
+  <li>Start the bot with <code>/start</code></li>
+  <li>Join the sponsor channel if prompted</li>
+  <li>Choose your preferred AI model</li>
+  <li>Start chatting naturally!</li>
+</ol>
 
-| Command | Description |
-|---------|-------------|
-| `/start` | Initialize the bot and check membership |
+<h3>Group Chat</h3>
+<ul>
+  <li><strong>Mention the bot:</strong> <code>@YourBotName What do you think about AI?</code></li>
+  <li><strong>Reply to the bot:</strong> Reply directly to any bot message</li>
+</ul>
 
-### Model Selection
+<h3>Available Commands</h3>
+<table>
+  <tr>
+    <th>Command</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>/start</code></td>
+    <td>Initialize the bot and check membership</td>
+  </tr>
+</table>
 
-Users can switch between available models using the inline keyboard:
-- ⚡ **Gemini 3.5 Flash Lite** - Faster, more efficient responses
-- 🚀 **Gemini 3.7 Flash** - More powerful, detailed responses
+<h3>Model Selection</h3>
+<table>
+  <tr>
+    <th>Model</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>⚡ <strong>Gemini 3.5 Flash Lite</strong></td>
+    <td>Faster, more efficient responses</td>
+  </tr>
+  <tr>
+    <td>🚀 <strong>Gemini 3.7 Flash</strong></td>
+    <td>More powerful, detailed responses</td>
+  </tr>
+</table>
 
-## 🧠 How It Works
+<hr>
 
-### Conversation Flow
+<h2 id="how-it-works">🧠 How It Works</h2>
 
-1. **User Interaction**: Bot receives a text message
-2. **Context Check**: Determines if it should respond (private chat vs group mention)
-3. **Membership Verification**: Ensures user has joined the sponsor channel
-4. **Context Management**: Retrieves or initializes conversation history
-5. **AI Processing**: Sends to appropriate Gemini model with full context
-6. **Response Delivery**: Returns AI response with proper formatting
+<h3>Conversation Flow</h3>
+<ol>
+  <li><strong>User Interaction:</strong> Bot receives a text message</li>
+  <li><strong>Context Check:</strong> Determines if it should respond</li>
+  <li><strong>Membership Verification:</strong> Ensures user has joined the sponsor channel</li>
+  <li><strong>Context Management:</strong> Retrieves or initializes conversation history</li>
+  <li><strong>AI Processing:</strong> Sends to appropriate Gemini model with full context</li>
+  <li><strong>Response Delivery:</strong> Returns AI response with proper formatting</li>
+</ol>
 
-### Context Management
+<h3>Context Management</h3>
+<ul>
+  <li>Stores up to <strong>20,000 characters</strong> of context</li>
+  <li>Automatically resets when limit is reached</li>
+  <li>Sanitizes history before sending to Gemini</li>
+  <li>Preserves conversation flow across messages</li>
+</ul>
 
-The bot maintains conversation history per chat:
-- Stores up to 20,000 characters of context
-- Automatically resets when limit is reached
-- Sanitizes history before sending to Gemini
-- Preserves conversation flow across messages
+<h3>Error Handling</h3>
+<ul>
+  <li>Rate limiting (429 errors)</li>
+  <li>Service overload (503 errors)</li>
+  <li>Content blocking</li>
+  <li>Telegram API errors</li>
+  <li>Invalid callback queries</li>
+  <li>Network issues</li>
+</ul>
 
-### Error Handling
+<h3>Fallback System</h3>
+<p>If the primary model fails due to high demand, rate limits, service overload, or empty responses, the bot automatically falls back to Gemini 3.5 Flash Lite to ensure users always get a response.</p>
 
-The bot gracefully handles:
-- Rate limiting (429 errors)
-- Service overload (503 errors)
-- Content blocking
-- Telegram API errors
-- Invalid callback queries
-- Network issues
+<hr>
 
-### Fallback System
+<h2 id="architecture">🏗️ Architecture</h2>
 
-If the primary model fails due to:
-- High demand
-- Rate limits
-- Service overload
-- Empty responses
-
-The bot automatically falls back to Gemini 3.5 Flash Lite to ensure users always get a response.
-
-## 🏗️ Architecture
-
-### Core Components
-
-```
-┌─────────────────┐
+<h3>Core Components</h3>
+<pre><code>┌─────────────────┐
 │   Telegram Bot   │
 │     (grammy)     │
 └────────┬─────────┘
@@ -152,108 +206,204 @@ The bot automatically falls back to Gemini 3.5 Flash Lite to ensure users always
     ┌────▼─────┐
     │  Gemini   │
     │    AI     │
-    └──────────┘
-```
+    └──────────┘</code></pre>
 
-### Key Functions
+<h3>Key Functions</h3>
+<table>
+  <tr>
+    <th>Function</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>getChatState()</code></td>
+    <td>Manages conversation history per chat</td>
+  </tr>
+  <tr>
+    <td><code>pushTurn()</code></td>
+    <td>Adds messages to conversation history</td>
+  </tr>
+  <tr>
+    <td><code>sanitizeHistory()</code></td>
+    <td>Cleans history before sending to API</td>
+  </tr>
+  <tr>
+    <td><code>enqueue()</code></td>
+    <td>Prevents race conditions in message handling</td>
+  </tr>
+  <tr>
+    <td><code>shouldRespondInChat()</code></td>
+    <td>Determines bot response eligibility</td>
+  </tr>
+  <tr>
+    <td><code>generateWithModel()</code></td>
+    <td>Core AI response generation</td>
+  </tr>
+  <tr>
+    <td><code>isMember()</code></td>
+    <td>Verifies sponsor channel membership</td>
+  </tr>
+</table>
 
-- `getChatState()` - Manages conversation history per chat
-- `pushTurn()` - Adds messages to conversation history
-- `sanitizeHistory()` - Cleans history before sending to API
-- `enqueue()` - Prevents race conditions in message handling
-- `shouldRespondInChat()` - Determines bot response eligibility
-- `generateWithModel()` - Core AI response generation
-- `isMember()` - Verifies sponsor channel membership
+<hr>
 
-## 🎭 The "Z" Persona
+<h2>🎭 The "Z" Persona</h2>
 
-The bot is configured with a unique personality:
-- **Warm & Clever**: Speaks like a close friend, not a manual
-- **Curious**: Asks thoughtful questions that show genuine interest
-- **Playful**: Mirrors the user's energy and adds wit
-- **Real**: Admits limitations and builds trust through honesty
-- **Engaging**: Leaves hooks to keep conversations going
+<p>The bot is configured with a unique personality:</p>
+<ul>
+  <li><strong>Warm & Clever:</strong> Speaks like a close friend, not a manual</li>
+  <li><strong>Curious:</strong> Asks thoughtful questions that show genuine interest</li>
+  <li><strong>Playful:</strong> Mirrors the user's energy and adds wit</li>
+  <li><strong>Real:</strong> Admits limitations and builds trust through honesty</li>
+  <li><strong>Engaging:</strong> Leaves hooks to keep conversations going</li>
+</ul>
 
-## 🔧 Configuration
+<hr>
 
-### Environment Variables
+<h2 id="configuration">🔧 Configuration</h2>
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `BOT_TOKEN` | Telegram Bot API token | ✅ |
-| `GEMINI_API_KEY` | Google Gemini API key | ✅ |
-| `SPONSOR_CHANNEL` | Sponsor channel username | ✅ |
-| `SPONSOR_CHANNEL_LINK` | Sponsor channel invite link | ✅ |
+<h3>Environment Variables</h3>
+<table>
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+    <th>Required</th>
+  </tr>
+  <tr>
+    <td><code>BOT_TOKEN</code></td>
+    <td>Telegram Bot API token</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><code>GEMINI_API_KEY</code></td>
+    <td>Google Gemini API key</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><code>SPONSOR_CHANNEL</code></td>
+    <td>Sponsor channel username</td>
+    <td>✅</td>
+  </tr>
+  <tr>
+    <td><code>SPONSOR_CHANNEL_LINK</code></td>
+    <td>Sponsor channel invite link</td>
+    <td>✅</td>
+  </tr>
+</table>
 
-### Modifiable Settings
+<h3>Modifiable Settings</h3>
+<ul>
+  <li><code>MODELS</code> - Add or remove available AI models</li>
+  <li><code>MAX_CONTEXT_CHARS</code> - Adjust context window size</li>
+  <li><code>SYSTEM_INSTRUCTION</code> - Modify the AI personality</li>
+  <li><code>START_MESSAGE</code> - Change welcome message</li>
+  <li><code>JOIN_MESSAGE</code> - Change membership prompt</li>
+</ul>
 
-You can customize:
-- `MODELS` - Add or remove available AI models
-- `MAX_CONTEXT_CHARS` - Adjust context window size
-- `SYSTEM_INSTRUCTION` - Modify the AI personality
-- `START_MESSAGE` - Change welcome message
-- `JOIN_MESSAGE` - Change membership prompt
+<hr>
 
-## 🚨 Troubleshooting
+<h2 id="troubleshooting">🚨 Troubleshooting</h2>
 
-### Common Issues
+<h3>Common Issues</h3>
 
-**Bot doesn't respond**
-- Check if bot token is valid
-- Ensure bot is running (`node index.js`)
-- Verify bot is added to the group/channel
+<details>
+  <summary><strong>Bot doesn't respond</strong></summary>
+  <ul>
+    <li>Check if bot token is valid</li>
+    <li>Ensure bot is running (<code>node index.js</code>)</li>
+    <li>Verify bot is added to the group/channel</li>
+  </ul>
+</details>
 
-**Membership check fails**
-- Confirm bot is admin in sponsor channel
-- Check channel username format (`@channelname`)
-- Verify user has actually joined the channel
+<details>
+  <summary><strong>Membership check fails</strong></summary>
+  <ul>
+    <li>Confirm bot is admin in sponsor channel</li>
+    <li>Check channel username format (<code>@channelname</code>)</li>
+    <li>Verify user has actually joined the channel</li>
+  </ul>
+</details>
 
-**AI responses fail**
-- Verify Gemini API key is valid
-- Check API rate limits
-- Ensure network connectivity
-- Monitor for content blocking
+<details>
+  <summary><strong>AI responses fail</strong></summary>
+  <ul>
+    <li>Verify Gemini API key is valid</li>
+    <li>Check API rate limits</li>
+    <li>Ensure network connectivity</li>
+    <li>Monitor for content blocking</li>
+  </ul>
+</details>
 
-### Error Messages
+<h3>Error Messages</h3>
+<table>
+  <tr>
+    <th>Error</th>
+    <th>Solution</th>
+  </tr>
+  <tr>
+    <td><code>BOT_TOKEN environment variable is required</code></td>
+    <td>Add token to .env file</td>
+  </tr>
+  <tr>
+    <td><code>GEMINI_API_KEY environment variable is required</code></td>
+    <td>Add API key to .env file</td>
+  </tr>
+  <tr>
+    <td><code>Failed to check channel membership</code></td>
+    <td>Check bot permissions in channel</td>
+  </tr>
+  <tr>
+    <td><code>Unexpected Telegram error</code></td>
+    <td>Check console for detailed error</td>
+  </tr>
+</table>
 
-| Error | Solution |
-|-------|----------|
-| `BOT_TOKEN environment variable is required` | Add token to .env file |
-| `GEMINI_API_KEY environment variable is required` | Add API key to .env file |
-| `Failed to check channel membership` | Check bot permissions in channel |
-| `Unexpected Telegram error` | Check console for detailed error |
+<hr>
 
-## 🔒 Security Considerations
+<h2>🔒 Security Considerations</h2>
+<ul>
+  <li><strong>Environment Variables:</strong> All sensitive data stored in <code>.env</code> file</li>
+  <li><strong>No Data Persistence:</strong> Conversation history kept in-memory only</li>
+  <li><strong>API Key Protection:</strong> Never commit <code>.env</code> file to version control</li>
+  <li><strong>Error Handling:</strong> Sensitive info not exposed in error messages</li>
+</ul>
 
-- **Environment Variables**: All sensitive data stored in `.env` file
-- **No Data Persistence**: Conversation history kept in-memory only
-- **API Key Protection**: Never commit `.env` file to version control
-- **Error Handling**: Sensitive info not exposed in error messages
+<hr>
 
-## 📈 Performance Optimization
+<h2>📈 Performance Optimization</h2>
+<ul>
+  <li><strong>In-memory caching</strong> for fast context retrieval</li>
+  <li><strong>Queue system</strong> to handle concurrent requests</li>
+  <li><strong>Context limiting</strong> to prevent memory issues</li>
+  <li><strong>Efficient API calls</strong> with proper error recovery</li>
+</ul>
 
-The bot implements several optimizations:
-- **In-memory caching** for fast context retrieval
-- **Queue system** to handle concurrent requests
-- **Context limiting** to prevent memory issues
-- **Efficient API calls** with proper error recovery
+<hr>
 
-## 🤝 Contributing
+<h2 id="contributing">🤝 Contributing</h2>
+<ol>
+  <li>Fork the repository</li>
+  <li>Create a feature branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
+  <li>Commit your changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+  <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
+  <li>Open a Pull Request</li>
+</ol>
 
-Contributions are welcome! Please follow these steps:
+<hr>
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+<h2 id="license">📝 License</h2>
+<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
-## 📝 License
+<hr>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<h2>🙏 Acknowledgments</h2>
+<ul>
+  <li><a href="https://grammy.dev/">grammy</a> - Excellent Telegram Bot framework</li>
+  <li><a href="https://ai.google.dev/">Google Generative AI</a> - Powerful AI models</li>
+  <li>Telegram community - Inspiration and support</li>
+</ul>
 
-## 🙏 Acknowledgments
+<hr>
 
-- [grammy](https://grammy.dev/) for the excellent Telegram Bot framework
-- [Google Generative AI](https://ai.google.dev/) for the powerful AI models
-- The Telegram community for inspiration and support
+<p align="center">
+  <em>Note: This bot is designed for educational and personal use. Ensure compliance with Telegram's terms of service and Google's AI usage guidelines when deploying.</em>
+</p>
