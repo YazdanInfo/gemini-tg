@@ -377,19 +377,6 @@ SPONSOR_CHANNEL_LINK=https://t.me/your_sponsor_channel_username</code></pre>
   <li><strong>Efficient API calls</strong> with proper error recovery</li>
 </ul>
 
-<hr>
-
-<h2 id="contributing">🤝 Contributing</h2>
-<ol>
-  <li>Fork the repository</li>
-  <li>Create a feature branch (<code>git checkout -b feature/AmazingFeature</code>)</li>
-  <li>Commit your changes (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
-  <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
-  <li>Open a Pull Request</li>
-</ol>
-
-<hr>
-
 <h2 id="license">📝 License</h2>
 <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
 
