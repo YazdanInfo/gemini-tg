@@ -77,29 +77,12 @@ SPONSOR_CHANNEL_LINK=https://t.me/myZ_bots
 
 ---
 
-## 📢 Sponsor Channel
-
-The sponsor channel is fully configurable through environment variables.
-
-You do **not** need to edit `index.js` when changing the sponsor channel.
-
-```env
-SPONSOR_CHANNEL=@myZ_bots
-SPONSOR_CHANNEL_LINK=https://t.me/myZ_bots
-```
-
-You can change it to another channel:
-
-```env
-SPONSOR_CHANNEL=@another_channel
-SPONSOR_CHANNEL_LINK=https://t.me/another_channel
-```
 
 ### Configuration
 
-`SPONSOR_CHANNEL` is used to verify membership.
+`SPONSOR_CHANNEL` is used by the join button.
 
-`SPONSOR_CHANNEL_LINK` is used by the join button.
+`SPONSOR_CHANNEL_LINK` is used to verify membership
 
 > The bot needs sufficient permissions in the sponsor channel to reliably check membership.
 
@@ -259,32 +242,6 @@ npm start
 ```
 ---
 
-## 🐛 Troubleshooting
-
-### `BOT_TOKEN environment variable is required`
-
-Set `BOT_TOKEN` in your environment.
-
-### `GEMINI_API_KEY environment variable is required`
-
-Set `GEMINI_API_KEY` in your environment.
-
-### `SPONSOR_CHANNEL environment variable is required`
-
-Example:
-
-```env
-SPONSOR_CHANNEL=@channel_username
-```
-
-### `SPONSOR_CHANNEL_LINK environment variable is required`
-
-Example:
-
-```env
-SPONSOR_CHANNEL_LINK=https://t.me/channel_username
-```
----
 
 ## 📄 License
 
