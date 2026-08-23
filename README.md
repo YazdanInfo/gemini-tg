@@ -16,25 +16,6 @@
 
 ---
 
-## ✨ Features
-
-- 🤖 **Gemini-powered conversations**
-- 💬 **Private chat support**
-- 👥 **Group support** with mentions and replies
-- 🧠 **Per-chat conversation context**
-- ♻️ **Automatic context management**
-- ⚡ **Multiple Gemini model selection**
-- 🔄 **Automatic fallback** for temporary model failures
-- 📢 **Configurable sponsor-channel membership gate**
-- 🧵 **Per-chat message queue**
-- 🛡️ **Environment-based secrets**
-- 🧹 **Conversation-history sanitization**
-- 🚀 **Simple deployment**
-- 📦 **Minimal project structure**
-- 🌍 **Multilingual conversations**
-
----
-
 ## 🖥️ Requirements
 
 Before running Gemini-TG, make sure you have:
