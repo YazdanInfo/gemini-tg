@@ -53,7 +53,6 @@ Edit `.env`:
 ```env
 BOT_TOKEN=your_telegram_bot_token
 GEMINI_API_KEY=your_gemini_api_key
-
 SPONSOR_CHANNEL=@your_channel
 SPONSOR_CHANNEL_LINK=https://t.me/your_channel
 ```
@@ -63,20 +62,7 @@ Start the bot:
 ```bash
 npm start
 ```
-
 ---
-
-### Example
-
-```env
-BOT_TOKEN=your_telegram_bot_token
-GEMINI_API_KEY=your_gemini_api_key
-SPONSOR_CHANNEL=@channel_username 
-SPONSOR_CHANNEL_LINK=https://t.me/channel_username
-```
-
----
-
 
 ### Configuration
 
