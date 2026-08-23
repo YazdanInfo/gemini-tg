@@ -71,8 +71,8 @@ npm start
 ```env
 BOT_TOKEN=your_telegram_bot_token
 GEMINI_API_KEY=your_gemini_api_key
-SPONSOR_CHANNEL=@myZ_bots
-SPONSOR_CHANNEL_LINK=https://t.me/myZ_bots
+SPONSOR_CHANNEL=@channel_username 
+SPONSOR_CHANNEL_LINK=https://t.me/channel_username
 ```
 
 ---
