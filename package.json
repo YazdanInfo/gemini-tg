@@ -1,0 +1,21 @@
+{
+  "name": "gemini-tg",
+  "version": "1.0.0",
+  "description": "A lightweight Telegram AI bot powered by Google's Gemini API.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "gemini",
+    "ai",
+    "grammy"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "latest",
+    "grammy": "latest"
+  }
+}
