@@ -208,27 +208,6 @@ to change the maximum amount of conversation context retained per chat.
 
 ---
 
-## ☁️ Deployment
-
-Gemini-TG works on Node.js-compatible hosting platforms.
-
-Configure these environment variables through your hosting provider:
-
-```text
-BOT_TOKEN
-GEMINI_API_KEY
-SPONSOR_CHANNEL
-SPONSOR_CHANNEL_LINK
-```
-
-Then run:
-
-```bash
-npm start
-```
----
-
-
 ## 📄 License
 
 Gemini-TG is released under the **MIT License**.
@@ -246,5 +225,5 @@ Created by **YazdanInfo**.
 ---
 
 <p align="center">
-  <strong>Gemini + Telegram + a little Z ✨</strong>
+  <strong>Gemini + Telegram </strong>
 </p>
