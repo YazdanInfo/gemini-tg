@@ -85,17 +85,6 @@ npm start
 
 ---
 
-## 🔐 Environment Variables
-
-Gemini-TG keeps deployment-specific configuration outside the source code.
-
-| Variable | Required | Description |
-|---|---|---|
-| `BOT_TOKEN` | ✅ | Telegram Bot API token |
-| `GEMINI_API_KEY` | ✅ | Google Gemini API key |
-| `SPONSOR_CHANNEL` | ✅ | Channel username used for membership verification |
-| `SPONSOR_CHANNEL_LINK` | ✅ | Link displayed by the join button |
-
 ### Example
 
 ```env
@@ -132,41 +121,6 @@ SPONSOR_CHANNEL_LINK=https://t.me/another_channel
 `SPONSOR_CHANNEL_LINK` is used by the join button.
 
 > The bot needs sufficient permissions in the sponsor channel to reliably check membership.
-
----
-
-## 🔒 Security
-
-**Never commit secrets to GitHub.**
-
-Gemini-TG reads sensitive values exclusively from environment variables:
-
-```js
-process.env.BOT_TOKEN
-process.env.GEMINI_API_KEY
-process.env.SPONSOR_CHANNEL
-process.env.SPONSOR_CHANNEL_LINK
-```
-
-The repository includes:
-
-```text
-.env.example
-.gitignore
-```
-
-Your real `.env` file should remain local or be configured through your hosting provider's secret/environment-variable system.
-
-### If a credential is exposed
-
-Immediately:
-
-1. Revoke the exposed credential.
-2. Generate a replacement.
-3. Update your deployment environment.
-4. Verify that the old credential is no longer present in Git history or source files.
-
-**Never reuse credentials that have been publicly exposed.**
 
 ---
 
@@ -256,24 +210,6 @@ Different chats can continue processing independently.
 
 ---
 
-## 🛡️ Error Handling
-
-Gemini-TG handles common Telegram and Gemini failures, including:
-
-- Telegram message-edit conflicts
-- Expired callback queries
-- Missing chats
-- Bot membership errors
-- Gemini quota errors
-- Temporary model availability errors
-- Gemini safety filtering
-- Empty model responses
-- Telegram `409 Conflict`
-
-Temporary model failures can trigger the configured fallback model.
-
----
-
 ## 📁 Project Structure
 
 ```text
@@ -284,19 +220,6 @@ gemini-tg/
 ├── .env.example
 └── .gitignore
 ```
-
-### Why a single `index.js`?
-
-The project intentionally keeps the core bot implementation in one file.
-
-This makes Gemini-TG:
-
-- Easy for beginners to understand
-- Fast to deploy
-- Simple to modify
-- Easy to move between hosts
-- Straightforward to debug
-
 ---
 
 ## ⚙️ Customization
@@ -353,27 +276,6 @@ Then run:
 ```bash
 npm start
 ```
-
-### PM2
-
-For a Linux server, PM2 can keep the bot running:
-
-```bash
-npm install -g pm2
-```
-
-Start the bot:
-
-```bash
-pm2 start index.js --name gemini-tg
-```
-
-Save the process list:
-
-```bash
-pm2 save
-```
-
 ---
 
 ## 🐛 Troubleshooting
@@ -391,7 +293,7 @@ Set `GEMINI_API_KEY` in your environment.
 Example:
 
 ```env
-SPONSOR_CHANNEL=@myZ_bots
+SPONSOR_CHANNEL=@channel_username
 ```
 
 ### `SPONSOR_CHANNEL_LINK environment variable is required`
@@ -399,74 +301,8 @@ SPONSOR_CHANNEL=@myZ_bots
 Example:
 
 ```env
-SPONSOR_CHANNEL_LINK=https://t.me/myZ_bots
+SPONSOR_CHANNEL_LINK=https://t.me/channel_username
 ```
-
-### Telegram `409 Conflict`
-
-Another instance of the same bot is already running.
-
-Stop the existing instance before starting another one.
-
-### Membership verification doesn't work
-
-Check that:
-
-- `SPONSOR_CHANNEL` is correct.
-- The channel exists.
-- The bot has appropriate access to the channel.
-- The channel username and link match.
-- The user has actually joined the channel.
-
-### Gemini requests fail
-
-Check:
-
-- Your Gemini API key.
-- Your API quota.
-- The configured model names.
-- Whether the models are available to your account.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome.
-
-### Development Workflow
-
-1. Fork the repository.
-2. Create a feature branch:
-
-```bash
-git checkout -b feature/my-feature
-```
-
-3. Make your changes.
-4. Test the bot locally.
-5. Commit your changes:
-
-```bash
-git commit -m "feat: add my feature"
-```
-
-6. Push the branch:
-
-```bash
-git push origin feature/my-feature
-```
-
-7. Open a pull request.
-
-### Please Never Submit
-
-- Telegram bot tokens
-- Gemini API keys
-- `.env` files
-- Passwords
-- Private credentials
-- Private deployment configuration
-
 ---
 
 ## 📄 License
