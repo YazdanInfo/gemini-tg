@@ -86,8 +86,8 @@
 <h2 id="installation">🚀 Installation</h2>
 
 <h3>1. Clone the Repository</h3>
-<pre><code>git clone https://github.com/yourusername/z-ai-telegram-bot.git
-cd z-ai-telegram-bot</code></pre>
+<pre><code>git clone https://github.com/yourusername/Gemini-tg
+cd gemini-tg</code></pre>
 
 <h3>2. Install Dependencies</h3>
 <pre><code>npm install</code></pre>
