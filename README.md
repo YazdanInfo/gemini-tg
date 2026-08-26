@@ -1,4 +1,4 @@
-<h1 align="center">Z AI Telegram Bot 🤖✨</h1>
+<h1 align="center">Z AI Telegram Bot (gemini-tg) 🤖✨</h1>
 
 <p align="center">
   <strong>A sophisticated Telegram bot powered by Google's Gemini AI</strong>
